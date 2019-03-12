@@ -1,13 +1,13 @@
 /******************************************************************************
-*	This program will be an online store that sells DVDs and books:
-*	It will be a complete system that serves multiple roles
-*  		First the program will display a menu to the user 
-*   	It will ask for input and validate it
-*   	if invalid input is entered it will output an error message and redisplay menu
-*  		once valid input is entered it will output a new menu depending on the role selected
-*         If Role selected is store manager it will verify credentials using the credentials text file (credentials.txt)
-*		  It will then ask for input and perform function selected
-*		  This looping will continue until option "C" is entered
+* This program will be an online store that sells DVDs and books:
+* 	It will be a complete system that serves multiple roles( Store Manager and Customer)
+*	 First the program will display a menu to the user 
+* 	It will ask for input and validate it
+* 	If invalid input is entered it will output an error message and redisplay menu
+* 	once valid input is entered it will output a new menu depending on the role selected
+* 		If Role selected is store manager it will verify credentials using the credentials text file (credentials.txt)
+* 	It will then ask for input and perform function selected
+* 	This looping will continue until option "C" is entered
 *
 *  Written by Juan Marquez
 *  starting November 26, 2018.
