@@ -10,14 +10,14 @@
 *  8) Then the program will gracefully exit
 *	
 *
-*  Written by Juan Marquez for CSE 2336.503
+*  Written by Juan Marquez
 *  starting November 14, 2018.
 ******************************************************************************/
 
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Assignment4
+public class specialTree
 {
 	public static void main(String[] arg)
 	{
