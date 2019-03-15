@@ -2,6 +2,16 @@
 * MySearchTree
 *
 * This program will create a binary search tree
+* It will be a generic class storing a value of the generic type
+* It will have the following functions:
+*	add - add a node to the tree wih the passed value
+*	find - returns true if the value passed is in the tree
+*	leafCount - returns the count of all of the leaves in the tree
+*	parentCount - returns count of parent nodes in the tree
+*	height - returns the tree height
+*	ancestors - returns the ancestor values of a passed value
+*	inOrderPrint - prints node values using a inorder traversal
+*	preOrderPrint - prints node values using a preorder traversal
 *
 *  Written by Juan Marquez
 *  starting March 1, 2019.
