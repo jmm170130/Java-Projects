@@ -199,39 +199,7 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		}
 	}
 	
-	// This method will return true if the tree is a perfect tree
-	public boolean isPerfect()
-	{
-		//call internal method to determine if tree is a perfect tree
-		return isPerfect(root);
-	}
-	
-	// Internal method to determine if the tree is a perfect tree
-	private boolean isPerfect( Node<AnyType> node)
-	{
-		// Tree is empty so it is a perfect tree
-		if( node == null)
-		{
-			return true;
-		}
-		//if it has both children continue looking in both the left and right subtree
-		if(node.left != null && node.right != null)
-		{
-			//both subtrees must return true in order for it to be a perfect tree
-			return isPerfect(node.left) && isPerfect(node.right);
-		}
-		//else it has no children so return true
-		else if( node.left == null && node.right == null)
-		{
-			return true;
-		}
-		//else it is not a perfect tree
-		else
-		{
-			return false;
-		}
-	}
-	
+
 	// This method will return an ArrayList with the ancestor values of the passed value
 	public ArrayList<AnyType> ancestors( AnyType value)
 	{
@@ -354,10 +322,7 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		//parent Count
 		System.out.print("Parent Count: ");
 		System.out.println(bst.parentCount());
-		
-		//Is the tree a perfect tree
-		System.out.print("Is the tree a perfect tree: ");
-		System.out.println(bst.isPerfect());
+
 
 		//look for ancestors of an existing and a non-existing value in the bst
 		System.out.print("Ancestors of 1: ");
