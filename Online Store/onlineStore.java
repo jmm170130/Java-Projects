@@ -1,13 +1,20 @@
 /******************************************************************************
 * This program will be an online store that sells DVDs and books:
 * 	It will be a complete system that serves multiple roles( Store Manager and Customer)
-*	 First the program will display a menu to the user 
+*	First the program will display a menu to the user 
 * 	It will ask for input and validate it
 * 	If invalid input is entered it will output an error message and redisplay menu
 * 	once valid input is entered it will output a new menu depending on the role selected
 * 		If Role selected is store manager it will verify credentials using the credentials text file (credentials.txt)
 * 	It will then ask for input and perform function selected
 * 	This looping will continue until option "C" is entered
+* 
+* Credentials Text File
+* 	It will be a new user name and password separated with a comma
+* 	Each credential will have its own line in the text file
+* 	ex. user123,1234
+* 		user2223,2345
+* 		suer123,23toy
 *
 *  Written by Juan Marquez
 *  starting November 26, 2018.
@@ -1175,7 +1182,7 @@ implements Comparable<Book>
 	public void removeBook(ArrayList<Book> bookArray, ArrayList<Dvd> dvdArray)
 	{
 		Scanner input = new Scanner(System.in);
-		TermProject termP = new TermProject();
+		onlineStore onlineS = new onlineStore();
 		Validator validator = new Validator();
 		
 		//variables
@@ -1227,7 +1234,7 @@ implements Comparable<Book>
 		else
 		{
 			//call method to display the catalog
-			termP.displayCatalog(bookArray,dvdArray, "both");
+			onlineS.displayCatalog(bookArray,dvdArray, "both");
 		}
 	}
 	//this method will compare book objects
@@ -1505,7 +1512,7 @@ implements Comparable<Dvd>
 	public void removeDvd(ArrayList<Book> bookArray, ArrayList<Dvd> dvdArray)
 	{
 		Scanner input = new Scanner(System.in);
-		TermProject termP = new TermProject();
+		onlineStore onlineS = new onlineStore();
 		Validator validator = new Validator();
 		
 		//variables
@@ -1556,7 +1563,7 @@ implements Comparable<Dvd>
 		else
 		{
 			//call method to display the catalog
-			termP.displayCatalog(bookArray,dvdArray, "both");
+			onlineS.displayCatalog(bookArray,dvdArray, "both");
 		}
 	}
 	
