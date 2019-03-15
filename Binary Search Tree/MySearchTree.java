@@ -9,6 +9,7 @@
 *	leafCount - returns the count of all of the leaves in the tree
 *	parentCount - returns count of parent nodes in the tree
 *	height - returns the tree height
+*	isPerfect - returns true if the tree is perfect
 *	ancestors - returns the ancestor values of a passed value
 *	inOrderPrint - prints node values using a inorder traversal
 *	preOrderPrint - prints node values using a preorder traversal
@@ -209,6 +210,55 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		}
 	}
 	
+	// This method will return true if the tree is a perfect tree
+	public boolean isPerfect()
+	{
+		int leafLevel = 0;
+		int treeHeight = treeHeight(root);
+		
+		//call internal method to determine if tree is a perfect tree
+		return isPerfect(root, leafLevel, treeHeight);
+	}
+	
+	// Internal method to determine if the tree is a perfect tree
+	// A perfect tree is a tree in which all internal nodes have two children
+	// and all the leaves are at the same level
+	private boolean isPerfect( Node<AnyType> node, int leafLevel, int treeHeight)
+	{
+		// Tree is empty so it is a perfect tree
+		if( node == null)
+		{
+			return true;
+		}
+		// if it has a right child but no left child return false
+		if( node.left == null && node.right != null)
+		{
+			return false;
+		}
+		//if it has a left child but no right child return false
+		if(node.left != null && node.right == null)
+		{
+			return false;
+		}
+		
+		// If Tree has no children then it is leaf node
+		if(node.left == null && node.right == null)
+		{
+			// Verify that all the leaves are on the same level
+			if(leafLevel == treeHeight)
+			{
+				return true;
+			}
+			//else it is not a perfect tree
+			else
+			{
+				return false;
+			}
+		}
+		//if it has both children continue looking in both the left and right subtree
+		//both subtrees must return true in order for it to be a perfect tree
+		return isPerfect(node.left, leafLevel + 1, treeHeight) && isPerfect(node.right, leafLevel + 1, treeHeight);
+	}
 
 	// This method will return an ArrayList with the ancestor values of the passed value
 	public ArrayList<AnyType> ancestors( AnyType value)
