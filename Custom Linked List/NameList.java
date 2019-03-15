@@ -1,7 +1,14 @@
  /******************************************************************************
 * NameList
 *
-* This program will create a custom linked list structure
+* This program will create a custom linked list structure that holds names in sorted order
+* Letter Nodes are always upperCase and lowerCase names will follow uppercase names in normal sorted order
+* Funtions include:
+*	add - adds a new name. Name must be at least 2 characters long. Adds the letter node if node already present
+*	remove - removes a name. If the name is the last one for a letter, the letter node will also be removed
+*	removeLetter - Removes a letter and all the names for that letter
+*	Find - finds a name in the list
+*	toString - returns a formatted string of the list
 *
 *  Written by Juan Marquez 
 *  starting February 12, 2019.
