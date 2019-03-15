@@ -22,13 +22,12 @@ import java.util.ArrayList;
 
 public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 {
-	
+
 	private static class Node<AnyType>
 	{
 		AnyType element;
 		Node<AnyType> left;
 		Node<AnyType> right;
-		
 		//constructor
 		Node( AnyType value)
 		{
@@ -259,7 +258,7 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		//both subtrees must return true in order for it to be a perfect tree
 		return isPerfect(node.left, leafLevel + 1, treeHeight) && isPerfect(node.right, leafLevel + 1, treeHeight);
 	}
-
+	
 	// This method will return an ArrayList with the ancestor values of the passed value
 	public ArrayList<AnyType> ancestors( AnyType value)
 	{
@@ -319,7 +318,7 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		if(node != null)
 		{
 			inOrderPrint(node.left); //call method again with left node
-			System.out.println(node.element); //print node
+			System.out.print(node.element + " "); //print node
 			inOrderPrint(node.right); //call method with the right node
 		}
 	}
@@ -335,7 +334,7 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 	{
 		if(node != null)
 		{
-			System.out.println(node.element);//print the node value
+			System.out.print(node.element + " ");//print the node value
 			preOrderPrint(node.left); //call method again with left node
 			preOrderPrint(node.right);//call method again with right node
 		}
@@ -346,7 +345,7 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 	{
 		
 		MySearchTree<Integer> bst = new MySearchTree<Integer>();
-		//add to the bst
+
 		bst.add(10);
 		bst.add(15);
 		bst.add(5);
@@ -354,21 +353,20 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		bst.add(13);
 		bst.add(20);
 		bst.add(4);
-		bst.add(1);
-		
+
 		//print bst in in-Order and in Pre-Order
-		System.out.println("Print in-Order");
+		System.out.print("Print in-Order: ");
 		bst.inOrderPrint();
-		System.out.println("=====================");
-		System.out.println("Print pre-Order");
+		System.out.println();
+		System.out.print("Print pre-Order: ");
 		bst.preOrderPrint();
-		System.out.println("=====================");
+		System.out.println();
 
 		//find an existing and a non-existing value in the bst
-		System.out.print("find 1: ");
-		System.out.println(bst.find(1));
+		System.out.print("Find 13: ");
+		System.out.println(bst.find(13));
 		
-		System.out.print("find 100: ");
+		System.out.print("Find 100: ");
 		System.out.println(bst.find(100));
 		
 		//Tree height
@@ -382,14 +380,18 @@ public class MySearchTree<AnyType extends Comparable<? super AnyType>>
 		//parent Count
 		System.out.print("Parent Count: ");
 		System.out.println(bst.parentCount());
-
+		
+		//Is the tree a perfect tree
+		System.out.print("Is the tree a perfect tree: ");
+		System.out.println(bst.isPerfect());
 
 		//look for ancestors of an existing and a non-existing value in the bst
-		System.out.print("Ancestors of 1: ");
-		System.out.println(bst.ancestors(1));
+		System.out.print("Ancestors of 13: ");
+		System.out.println(bst.ancestors(13));
 		
 		System.out.print("Ancestors of 100: ");
 		System.out.println(bst.ancestors(100));
+		
 	}	
 }
 	
