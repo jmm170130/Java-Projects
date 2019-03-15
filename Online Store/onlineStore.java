@@ -13,8 +13,8 @@
 * 	It will be a new user name and password separated with a comma
 * 	Each credential will have its own line in the text file
 * 	ex. user123,1234
-* 		user2223,2345
-* 		suer123,23toy
+* 	    user2223,2345
+* 	    user123,23toy
 *
 *  Written by Juan Marquez
 *  starting November 26, 2018.
