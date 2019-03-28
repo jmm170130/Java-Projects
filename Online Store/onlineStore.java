@@ -1,5 +1,5 @@
 /******************************************************************************
-* This program will be an online store that sells DVDs and books:
+* This program is an online store that sells DVDs and books:
 * 	It will be a complete system that serves multiple roles( Store Manager and Customer)
 *	First the program will display a menu to the user 
 * 	It will ask for input and validate it
